@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 
 <resources>
-    <string name="app_name">FT8CN</string>
+    <string name="app_name_debug">FT8CN Debug</string>
+
+    <string name="app_name_release">FT8CN</string>
 
     <string name="nav_menu_title_call_list">コンテンツ</string>
 

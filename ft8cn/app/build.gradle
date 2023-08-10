@@ -37,16 +37,20 @@ android {
         }
         signingConfig signingConfigs.debug
     }
-
     buildTypes {
 
         debug{
+            applicationIdSuffix ".debug"
             buildConfigField("String", "apkBuildTime", "\"${currentTime}\"")
+            versionNameSuffix   "-SNAPSHOT"
+            resValue "string", "app_name", "@string/app_name_debug"
+            resValue "string", "build_config_package", "com.bg7yoz.ft8cn"
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("String", "apkBuildTime", "\"${currentTime}\"")
+            resValue "string", "app_name", "@string/app_name_release"
 
             // true - 打开混淆
             //minifyEnabled true
