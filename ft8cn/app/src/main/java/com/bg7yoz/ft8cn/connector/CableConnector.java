@@ -20,13 +20,13 @@ public class CableConnector extends BaseRigConnector {
     }
 
     private final CableSerialPort cableSerialPort;
-    private final BaseRig cableConnectedRig;
+    //private final BaseRig cableConnectedRig;
     private OnCableDataReceived onCableDataReceived;
 
     public CableConnector(Context context,CableSerialPort.SerialPort serialPort, int baudRate
-            , int controlMode, BaseRig cableConnectedRig) {
+            , int controlMode) {//, BaseRig cableConnectedRig) {
         super(controlMode);
-        this.cableConnectedRig = cableConnectedRig;
+        //this.cableConnectedRig = cableConnectedRig;
         cableSerialPort= new CableSerialPort(context,serialPort,baudRate,getOnConnectorStateChanged());
         cableSerialPort.ioListener=new SerialInputOutputManager.Listener() {
             @Override
@@ -101,7 +101,7 @@ public class CableConnector extends BaseRigConnector {
 
     @Override
     public void disconnect() {
-        cableConnectedRig.onDisconnecting();
+        //cableConnectedRig.onDisconnecting();
         super.disconnect();
         cableSerialPort.disconnect();
     }

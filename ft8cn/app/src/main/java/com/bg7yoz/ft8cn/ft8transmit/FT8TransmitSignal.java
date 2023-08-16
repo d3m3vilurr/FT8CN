@@ -417,6 +417,7 @@ public class FT8TransmitSignal {
         if (GeneralVariables.controlMode == ControlMode.CAT) {
             Log.d(TAG, "playFT8Signal: try to transmit over CAT");
 
+            /*
             if (onDoTransmitted != null) {//处理音频数据，可以给ICOM的网络模式发送
                 if (onDoTransmitted.supportTransmitOverCAT()) {
                     onDoTransmitted.onTransmitOverCAT(msg);
@@ -439,6 +440,7 @@ public class FT8TransmitSignal {
                     return;
                 }
             }
+            */
         }
 
         //进入声卡模式
