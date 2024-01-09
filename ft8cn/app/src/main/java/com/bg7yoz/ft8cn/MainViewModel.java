@@ -496,6 +496,8 @@ public class MainViewModel extends ViewModel {
             //与我的呼号有关，与关注的呼号有关
             if (msg.getCallsignFrom().equals(GeneralVariables.myCallsign)
                     || msg.getCallsignTo().equals(GeneralVariables.myCallsign)
+                    || msg.getCallsignFrom().equals(GeneralVariables.myStdCallsign)
+                    || msg.getCallsignTo().equals(GeneralVariables.myStdCallsign)
                     || GeneralVariables.callsignInFollow(msg.getCallsignFrom())
                     || (GeneralVariables.callsignInFollow(msg.getCallsignTo()) && (msg.getCallsignTo() != null))
                     || (GeneralVariables.autoFollowCQ && msg.checkIsCQ())) {//是CQ，并且允许关注CQ

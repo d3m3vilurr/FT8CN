@@ -468,6 +468,7 @@ public class MyCallingFragment extends Fragment {
                         //呼叫的目标不能是自己
                         if (!message.getCallsignFrom().equals("<...>")
                                 && !message.getCallsignFrom().equals(GeneralVariables.myCallsign)
+                                && !message.getCallsignFrom().equals(GeneralVariables.myStdCallsign)
                                 && !(message.i3 == 0 && message.n3 == 0)) {
                             doCallNow(message);
                         }

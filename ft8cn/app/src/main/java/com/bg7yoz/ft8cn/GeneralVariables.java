@@ -158,6 +158,7 @@ public class GeneralVariables {
     //private static final Map<String,String> callsignAndGrids=new HashMap<>();
 
     public static String myCallsign = "";//我的呼号
+    public static String myStdCallsign = "";
     public static String toModifier = "";//呼叫的修饰符
     private static float baseFrequency = 1000;//声音频率
 

@@ -289,8 +289,12 @@ public class Ft8Message {
      */
     public boolean inMyCall() {
         if (GeneralVariables.myCallsign.length() == 0) return false;
+        // a conditions are redundant.
+        // only checking with stdcall would be acceptable.
         return this.callsignFrom.contains(GeneralVariables.myCallsign)
-                || this.callsignTo.contains(GeneralVariables.myCallsign);
+                || this.callsignTo.contains(GeneralVariables.myCallsign)
+                || this.callsignFrom.contains(GeneralVariables.myStdCallsign)
+                || this.callsignTo.contains(GeneralVariables.myStdCallsign);
         //return (this.callsignFrom.contains(mycall) || this.callsignTo.contains(mycall)) && (!mycall.equals(""));
     }
 /*

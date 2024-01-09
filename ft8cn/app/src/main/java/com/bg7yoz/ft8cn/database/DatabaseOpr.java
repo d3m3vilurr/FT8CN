@@ -1789,6 +1789,7 @@ public class DatabaseOpr extends SQLiteOpenHelper {
                 }
                 if (name.equalsIgnoreCase("callsign")) {
                     GeneralVariables.myCallsign = result;
+                    GeneralVariables.myStdCallsign = FT8Package.getStdCall(GeneralVariables.myCallsign);
                     String callsign = GeneralVariables.myCallsign;
                     if (callsign.length() > 0) {
                         Ft8Message.hashList.addHash(FT8Package.getHash22(callsign), callsign);

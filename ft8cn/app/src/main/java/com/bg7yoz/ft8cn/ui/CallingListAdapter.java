@@ -54,6 +54,7 @@ public class CallingListAdapter extends RecyclerView.Adapter<CallingListAdapter.
             //添加菜单的参数i1:组，i2:id值，i3:显示顺序
             if (!ft8Message.getCallsignTo().contains("...")//目标不能是自己
                     && !ft8Message.getCallsignTo().equals(GeneralVariables.myCallsign)
+                    && !ft8Message.getCallsignTo().equals(GeneralVariables.myStdCallsign)
                     && !(ft8Message.i3==0&&ft8Message.n3==0)) {
                 if (!ft8Message.checkIsCQ()) {
                     if (showMode==ShowMode.CALLING_LIST) {//在消息列表中就可以显示这个菜单了
@@ -69,7 +70,8 @@ public class CallingListAdapter extends RecyclerView.Adapter<CallingListAdapter.
                                 .setActionView(view);
                     }
                     //说明是对我呼叫，加上回复菜单
-                    if (ft8Message.getCallsignTo().equals(GeneralVariables.myCallsign)) {
+                    if (ft8Message.getCallsignTo().equals(GeneralVariables.myCallsign)
+                            || ft8Message.getCallsignTo().equals(GeneralVariables.myStdCallsign)) {
                         contextMenu.add(0, 4, 0, String.format(
                                         GeneralVariables.getStringFromResource(R.string.reply_to)
                                         , ft8Message.getCallsignFrom(), ft8Message.fromWhere))

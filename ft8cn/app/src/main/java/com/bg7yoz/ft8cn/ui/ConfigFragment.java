@@ -114,6 +114,7 @@ public class ConfigFragment extends Fragment {
                 Ft8Message.hashList.addHash(FT8Package.getHash10(callsign), callsign);
             }
             GeneralVariables.myCallsign = (editable.toString().toUpperCase().trim());
+            GeneralVariables.myStdCallsign = FT8Package.getStdCall(GeneralVariables.myCallsign);
         }
     };
     //发射频率
